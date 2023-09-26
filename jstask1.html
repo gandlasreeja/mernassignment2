@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="i1" type="number"/> <br/>
+   <button onclick="reverse()">Reverse</button>
+   <p id="i2"></p>
+    </body>
+    <script>
+        function reverse(){
+            let x=document.getElementById("i1").value;
+            let n = x.toString();
+            let r = '';
+            for (let i = n.length - 1; i >= 0; i--) {
+                r += n[i];
+            }
+            document.getElementById("i2").innerHTML=parseInt(r);
+        }
+      
+    </script>
+</html>

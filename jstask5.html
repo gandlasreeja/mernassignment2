@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-5</title>
+    <style>
+        label{
+            display: inline-block;
+            width:70px;
+            margin:8px;
+        }
+        input[type="submit"]{
+            margin-left: 90px;
+        }
+    </style>
+    <script>       
+
+         function validate(){
+            var e1 = document.getElementById("err1");
+            var e2 = document.getElementById("err2");
+            var e3 = document.getElementById("err3");
+            var e4 = document.getElementById("err4");
+
+            var name = document.getElementById("na");
+            var email = document.getElementById("em");
+            var web = document.getElementById("website");
+            var text = document.getElementById("text");
+            flag=1;
+            if(name.value === ""){
+                e1.innerHTML = " This field is required";
+                name.style.border = "2px solid crimson";
+                flag = 0;
+            }
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if(!emailRegex.test(email.value)){
+                e2.innerHTML = " A valid email address is required";
+                email.style.border = "2px solid crimson";
+                flag=0;
+            }
+
+            const webRegex = /^(www\.)?([a-zA-Z0-9-]+\.[a-zA-Z]{2,})(\/\S*)?$/;
+            if(!webRegex.test(web.value)){
+                e3.innerHTML = " A valid url is required";
+                web.style.border = "2px solid crimson";
+                flag=0;
+            }
+
+            if(text.value ===""){
+                e4.innerHTML = " This field is required";
+                text.style.border = "2px solid crimson";
+                flag = 0;
+            }
+            if(flag == 1){
+                return true;
+            }
+            else{
+                return false;
+            }
+         }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <label>Name: </label><input class="color" type="text" id="na"><span id="err1" style="color:crimson"></span>
+        <br>
+        <label>Email: </label><input class="color" type="text" id="em"><span id="err2" style="color:crimson;"></span>
+        <br>
+        <label>Website: </label><input class="color" type="text" id="website"><span id="err3" style="color:crimson;"></span>
+        <br>
+        <label>Message:</label>
+        <textarea class="color" id="text" rows="5" columns="20"></textarea><span id="err4" style="color:crimson;"></span>
+        <br>
+        <input class="color" type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>

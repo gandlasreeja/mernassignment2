@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <label for="i1">1st number:</label>
+    <input id="i1" type="number"/><br/><br/>
+    <label for="i2">2nd number:</label>
+    <input id="i2" type="number"/><br/><br/>
+    <button onclick="multiplyNumbers()">Multiply</button>
+    <button onclick="divideNumbers()">Divide</button>
+    <br/><br/>
+    <label for="">The result is:</label><br/>
+    <p id="i3"></p>
+
+    <script>
+        function multiplyNumbers() {
+            let x = parseFloat(document.getElementById("i1").value);
+            let y = parseFloat(document.getElementById("i2").value);
+            let r = x * y;
+            document.getElementById("i3").innerHTML = r;
+        }
+
+        function divideNumbers() {
+            let x = parseFloat(document.getElementById("i1").value);
+            let y = parseFloat(document.getElementById("i2").value);
+
+            if (y === 0) {
+                document.getElementById("i3").innerHTML = "Cannot divide by zero.";
+            } else {
+                let rr = x / y;
+                document.getElementById("i3").innerHTML = rr;
+            }
+        }
+    </script>
+</body>
+</html>

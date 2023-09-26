@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button onclick="date()">Show date</button>
+        <p id="i1"></p>
+        <button onclick="time()">Show time</button>
+        <p id="i2"></p>
+    </body>
+    <script>
+        function date(){
+            const currentDate = new Date();
+            const monthNames = [
+                "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            ];
+
+            const day = currentDate.getDate();
+            const month = monthNames[currentDate.getMonth()];
+            const year = currentDate.getFullYear();
+
+            const formattedDate = `${day}/${month.toLowerCase()}/${year}`;
+            document.getElementById("i1").innerHTML = formattedDate;
+        }
+        function time(){
+            const d = new Date();
+            document.getElementById("i2").innerHTML = d;
+        }
+    </script>
+</html>

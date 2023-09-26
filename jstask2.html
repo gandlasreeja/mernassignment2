@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="i1" type="text"/> <br/>
+   <button onclick="arrangealpha()">Arrangealphabetically</button>
+   <p id="i2"></p>
+    </body>
+    <script>
+        function arrangealpha(){
+            let x=document.getElementById("i1").value;
+            let a=x.split("");
+            let r=a.sort().join("");
+            document.getElementById("i2").innerHTML=r;
+        }
+      
+    </script>
+</html>
